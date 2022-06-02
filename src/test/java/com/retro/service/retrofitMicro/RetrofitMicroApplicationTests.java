@@ -1,10 +1,10 @@
-package student.demo.pro.parcticePro;
+package com.retro.service.retrofitMicro;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ParcticeProApplicationTests {
+class RetrofitMicroApplicationTests {
 
 	@Test
 	void contextLoads() {
