@@ -10,17 +10,17 @@ import java.util.List;
 
 @Component
 public class MyThread1 extends Thread {
-//    public void setEmployeeService(EmployeeServiceImpl employeeService) {
-//        this.employeeService = employeeService;
-//    }
+    public void setEmployeeService(EmployeeServiceImpl employeeService) {
+        this.employeeService = employeeService;
+    }
 
 @Autowired
       EmployeeServiceImpl employeeService;
 
 
-//    public void setEmployeeRepo(EmployeeRepo employeeRepo) {
-//        this.employeeRepo = employeeRepo;
-//    }
+    public void setEmployeeRepo(EmployeeRepo employeeRepo) {
+        this.employeeRepo = employeeRepo;
+    }
 @Autowired
      EmployeeRepo employeeRepo;
 
