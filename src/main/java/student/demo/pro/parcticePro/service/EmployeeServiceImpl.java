@@ -75,5 +75,13 @@ EmployeeRepo employeeRepo;
        return employeeRepo.save(employee);
 
     }
-
+public List<Employee> getEmployeByName(String name){
+        return employeeRepo.findByName(name);
+}
+public List<Employee> getEmpBYnameAndAge(String name, int age){
+        return  employeeRepo.findByUserNameAndEge(name,age);
+}
+public  List<Employee> getAllE(){
+        return employeeRepo.getAllEmplo();
+}
 }

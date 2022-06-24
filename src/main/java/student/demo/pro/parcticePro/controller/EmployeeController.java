@@ -67,9 +67,21 @@ public class EmployeeController {
     public List<Employee> getAllEmployee() {
         return employeeService.getAllEmp();
     }
+    @GetMapping("findBYName/{name}")
+    public List<Employee> getEmpByName(@PathVariable String  name){
+        return  employeeService.getEmployeByName(name);
+    }
     @PutMapping("updateEmp/{id}")
     public Employee updateEmp(@RequestBody EmployeeRequestDTO employeeRequestDTO,@PathVariable int id){
       return employeeService.updateEmpById(employeeRequestDTO,id);
     }
+@GetMapping("empByNameAndUserName/{name}/{age}")
+    public List<Employee> getEmpBYageAndName(@PathVariable String name, @PathVariable int age){
+        return  employeeService.getEmpBYnameAndAge(name,age);
+}
 
+@GetMapping("employees")
+    public  List<Employee> getEmp(){
+        return employeeService.getAllE();
+}
 }
