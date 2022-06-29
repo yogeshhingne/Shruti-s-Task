@@ -25,10 +25,11 @@ public class EmployeeServiceImpl {
     MyThread2 thread2;
     @Autowired
     MyThread3 myThread3;
-@Autowired
-EmployeeRepo employeeRepo;
-@Autowired
+    @Autowired
+    EmployeeRepo employeeRepo;
+    @Autowired
     ModelMapper modelMapper;
+
     public List<Employee> addEmployee() {
         List<Employee> empList = new ArrayList<Employee>();
         BufferedReader br = null;
@@ -58,30 +59,44 @@ EmployeeRepo employeeRepo;
         myThread3.start();
         return "task done";
     }
-    public Employee createEmp(Employee employee){
-       return employeeRepo.save(employee);
+
+    public Employee createEmp(Employee employee) {
+        return employeeRepo.save(employee);
     }
-    public Employee getById(int id){
-        return  employeeRepo.findById(id).get();
+
+    public Employee getById(int id) {
+        return employeeRepo.getById(id);
     }
-    public  List<Employee> getAllEmp(){
-      return  employeeRepo.findAll();
+
+    public List<Employee> getAllEmp() {
+        return employeeRepo.findAll();
     }
-    public Employee updateEmpById(EmployeeRequestDTO employeeRequestDTO,int id){
+
+    public Employee updateEmpById(EmployeeRequestDTO employeeRequestDTO, int id) {
         Employee employee = employeeRepo.findById(id).get();
         employee.setId(employeeRequestDTO.getId());
         employee.setName(employeeRequestDTO.getName());
         employee.setAge(employeeRequestDTO.getAge());
-       return employeeRepo.save(employee);
+        return employeeRepo.save(employee);
 
     }
-public List<Employee> getEmployeByName(String name){
+
+    public List<Employee> getEmployeByName(String name) {
         return employeeRepo.findByName(name);
-}
-public List<Employee> getEmpBYnameAndAge(String name, int age){
-        return  employeeRepo.findByUserNameAndEge(name,age);
-}
-public  List<Employee> getAllE(){
+    }
+
+    public List<Employee> getEmpBYnameAndAge(String name, int age) {
+        return employeeRepo.findByUserNameAndEge(name, age);
+    }
+
+    public List<Employee> getAllE() {
         return employeeRepo.getAllEmplo();
-}
+    }
+
+    public void deleteEmployee(int id) {
+        employeeRepo.deleteById(id);
+    }
+    public  Employee updateEmpByID(Employee employee){
+        return employeeRepo.save(employee);
+    }
 }
